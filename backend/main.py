@@ -4,7 +4,7 @@ from fastapi import HTTPException
 import json
 import os
 import datetime
-
+from fastapi.middleware.cors import CORSMiddleware
 #user sends for creating task
 class TaskCreate(BaseModel):
     description: str
@@ -37,7 +37,13 @@ def now():
 
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/tasks", response_model= list[Task])
 def list_tasks(status:str | None = None):
     tasks = load_tasks()
