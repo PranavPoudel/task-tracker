@@ -80,7 +80,7 @@ def update_task(task_id: int, task_update: TaskUpdate):
             t['updatedAt']= now()
             save_tasks(tasks)
             return t
-        raise HTTPException(status_code=404, detail="Task not found")
+    raise HTTPException(status_code=404, detail="Task not found")
 
 @app.delete ("/tasks/{task_id}")
 def delete_task(task_id:int):
