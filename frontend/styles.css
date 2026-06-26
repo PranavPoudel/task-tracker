@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: darkblue;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Main container */
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Form styling */
+#task-form {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    display: flex;
+    gap: 10px;
+}
+
+#task-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#task-form button {
+    padding: 15px 30px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+
+#task-form button:hover {
+    background: #45a049;
+}
+
+/* Task list container */
+#task-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Individual task item */
+.task-item {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-description {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+.task-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+.status-todo {
+    background: #ffeaa7;
+    color: #d63031;
+}
+
+.status-in-progress {
+    background: #74b9ff;
+    color: #0984e3;
+}
+
+.status-done {
+    background: #55efc4;
+    color: #00b894;
+}
+
+.task-actions button {
+    padding: 8px 15px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.task-actions button:hover {
+    opacity: 0.8;
+}
+
+.btn-mark-done {
+    background: #00b894;
+    color: white;
+}
+
+.btn-delete {
+    background: #d63031;
+    color: white;
+}
